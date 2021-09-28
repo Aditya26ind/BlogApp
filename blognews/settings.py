@@ -154,7 +154,7 @@ CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
 )
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"app/staticdir/static")
+    os.path.join(BASE_DIR,"static")
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 #smtp
