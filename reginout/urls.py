@@ -4,7 +4,7 @@ from django.urls import path,include
 from django.contrib.auth import views as auth_views
 from .views import changePassword, index,signuppage,loginuser,logoutuser
 urlpatterns = [
-     path('',index,name='news'),
+     path('',loginuser,name='login'),
      path('signup/',signuppage,name='signup'),
      path('login/',loginuser,name='login'),
      path('logout/',logoutuser,name='logout'),
