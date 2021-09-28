@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import django_heroku
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m6+5@9^w0l4@n-kd!os%qc+e3(6^db+^^vr@u#s@v)h_#04_4s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -154,7 +155,7 @@ CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
 )
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"static")
+    os.path.join(BASE_DIR,"statichere/static")
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 #smtp
@@ -163,4 +164,4 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER='adi0699sal@gmail.com'
-EMAIL_HOST_PASSWORD='terimakichut2'
+EMAIL_HOST_PASSWORD=config('KEY')
