@@ -19,12 +19,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href='http://127.0.0.1:8000/news/'>Home</a>
-              <a class="nav-link" href="http://127.0.0.1:8000/blog/">Blog</a>
+              <a class="nav-link active" aria-current="page" href='{% url 'news' %}'>Home</a>
+              <a class="nav-link" href='{% url 'blog' %}'>Blog</a>
               <!-- 1 news page only when page clicked -->
-              <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
-              <a class="nav-link" href="http://127.0.0.1:8000/logout/">Logout</a>
-              <a class="nav-link" href="http://127.0.0.1:8000/signup/">Resgiter</a>
+              <a class="nav-link" href='{% url 'login' %}'>Login</a>
+              <a class="nav-link" href='{% url 'logout' %}'>Logout</a>
+              <a class="nav-link" href='{% url 'signup' %}'>Resgiter</a>
             </div>
           </div>
         </div>

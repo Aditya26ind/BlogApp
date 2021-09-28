@@ -1,7 +1,7 @@
 {%extends 'index.html'%}
 
 {%block body %} 
-  <form method="POST" action='http://127.0.0.1:8000/blog/' class="p-5 mt-4"> 
+  <form method="POST" action='{% url 'blog' %}' class="p-5 mt-4"> 
   {% csrf_token %}
     <div class="mb-3">
     <div class='d-flex flex-row-reverse bd-highlight '>

@@ -22,8 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('',include('reginout.urls')),
-    path('news/',include('News.urls')),
-    path('blog/',include('Blog.urls')),
+    path('news/',include('News.urls'),name='news'),
+    path('blog/',include('Blog.urls'),name='blog'),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL , document_root=settings.STATIC_ROOT)

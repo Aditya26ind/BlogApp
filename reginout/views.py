@@ -38,7 +38,6 @@ def changePassword(request):
         u = User.objects.filter(username=request.POST['username'])
         print(request.POST['username'])
         new=request.POST["new_password"]
-        print(new)
         u.set_password(new)
         u.save()
     return render(request,'chngepass.html')
