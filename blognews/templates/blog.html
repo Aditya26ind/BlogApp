@@ -1,0 +1,38 @@
+{%extends 'index.html'%}
+
+{%block body %} 
+  <form method="POST" action='http://127.0.0.1:8000/blog/' class="p-5 mt-4"> 
+  {% csrf_token %}
+    <div class="mb-3">
+    <div class='d-flex flex-row-reverse bd-highlight '>
+      <a  class='position-absolute text-decoration-none' href='#blogs'>My BlOgS</a>
+    </div>
+    <label for="exampleFormControlTextarea1" class="form-label">Title</label>
+    <input name='title' class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder='title'></input>
+    <label for="exampleFormControlTextarea1" class="form-label">Write Blog Here</label>
+    <textarea name='blogwritten' class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+    </div>
+    <div>
+    <button type='submit' class="btn btn-primary d-inline w-10">Save</button>
+    {% comment %} <button class="btn btn-success d-inline ">My Blogs</button> {% endcomment %}
+</div>
+</form>
+
+<h2 id='blogs' class="text-center text-color-black border-bottom p-2 mt-5 w-75 mx-auto">BlOgS</h2>
+{% for val in data%}
+<div class='p-5 mt-5'>
+<h2 class='text-center text-success font-italic'>{{val.title}}</h2>
+<p class='mt-5'>{{val.textblog}}</p> 
+<div class='d-flex flex-row-reverse bd-highlight mt-5 '>
+
+<h5 class='text-secondary'>{{val.created_at}}</h5>
+<form action='{% url 'blogdelete' val.id %}' method="POST" >
+{% csrf_token %}
+<button type='submit' class="btn btn-danger d-inline w-0 me-3">DeLeTe</button>
+</form>
+</div> 
+</div>
+
+{% endfor %}
+
+{%endblock body%}

@@ -1,0 +1,26 @@
+{%extends 'index.html'%}
+{%block body%}
+<p class="text-center fs-1  ml-3 border-bottom mx-5 fst-italic shadow-sm p-3 mb-5 bg-body rounded"><b>News</b></p>
+
+<form class="input-group mb-3 w-50 mx-auto mb-5" method='POST' action='http://127.0.0.1:8000/news/'>
+{% csrf_token %}
+  <button class="btn btn-outline-primary " type="submit" id="button-addon1">Search</button>
+  <input type="text" name="search" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+  </form>
+{%for val in data.articles%}
+<div class="card mb-4 shadow-lg mx-auto " style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <a href="{{val.url}}"><img class="w-100 h-75 mt-4 ps-0 ps-md-3 shadow-lg" src="{{val.urlToImage}}" class="card-img" alt="..."></a>
+    </div>
+    <div class="col-md-8"> 
+      <div class="card-body ">
+        <h5 class="card-title">{{val.title}}</h5>
+        <p class="card-text">{{val.description}}</p>
+        <p class="card-text"><small class="text-muted">{{val.publishedAt}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+ {%endblock body%}

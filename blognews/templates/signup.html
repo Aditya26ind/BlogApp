@@ -1,0 +1,24 @@
+{% extends 'index.html'%}
+{%block body%}
+   <div class='p-5'>
+    <form class=' w-50 mx-auto' method='post'>
+    {% csrf_token %}
+    {% for fields in form%}
+    <div class="mb-2">
+     <label class="form-label" for="form3Example3">{{fields.label}}</label>
+     {{fields}}
+     {{fields.errors}}
+     </div>
+    {% endfor %}
+    {%if messages%}
+    {%for message in messages%}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show">
+    <strong>{{message.tags}}</strong>{{message}}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+    {% endfor %}
+    {% endif %}
+    <button type='submit' class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+{%endblock body%}
