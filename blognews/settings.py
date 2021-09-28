@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'reginout',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'reginout',
     'News',
     'Blog'
 ]
@@ -55,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -155,7 +155,7 @@ CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
 )
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"statichere/static")
+    os.path.join(BASE_DIR,"static")
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 #smtp
