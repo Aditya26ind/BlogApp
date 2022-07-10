@@ -7,17 +7,17 @@
   <button class="btn btn-outline-primary " type="submit" id="button-addon1">Search</button>
   <input type="text" name="search" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
   </form>
-{%for val in data.articles%}
-<div class="card mb-4 shadow-lg mx-auto " style="max-width: 540px;">
+{%for val in data.json.articles%}
+<div class="card mb-4 shadow-lg mx-auto " style="max-width: 560px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <a href="{{val.url}}"><img class="w-100 h-75 mt-4 ps-0 ps-md-3 shadow-lg" src="{{val.urlToImage}}" class="card-img" alt="..."></a>
+      <a href="{{val.link}}"><img class="w-100 h-75 mb-5 mt-5 ps-0 ps-md-3 shadow-lg" src="{{val.media}}" class="card-img" alt="..."></a>
     </div>
     <div class="col-md-8"> 
       <div class="card-body ">
         <h5 class="card-title">{{val.title}}</h5>
-        <p class="card-text">{{val.description}}</p>
-        <p class="card-text"><small class="text-muted">{{val.publishedAt}}</small></p>
+        <p class="card-text">{{val.summary}}</p>
+        <p class="card-text"><small class="text-muted">{{val.published_date}}</small></p>
       </div>
     </div>
   </div>
