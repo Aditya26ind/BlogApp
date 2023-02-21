@@ -163,7 +163,7 @@ CORS_ORIGIN_WHITELIST = (
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles_build","static")
 #smtp
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
